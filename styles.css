@@ -1,0 +1,90 @@
+/* Deep Navy & Ice-Blue Network Canvas matching LinkedIn Banner */
+.bg-network-canvas {
+  background-color: #040914;
+  background-image:
+    radial-gradient(circle at 18% 15%, rgba(56, 189, 248, 0.10) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(147, 197, 253, 0.08) 0%, transparent 45%),
+    radial-gradient(rgba(147, 197, 253, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040914;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #102347;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d3b72;
+}
+
+/* Print Stylesheet for clean Resume / CV PDF export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10.5pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    max-width: 100% !important;
+  }
+
+  section, article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bg-navy-950,
+  .bg-navy-900,
+  .bg-navy-850,
+  .bg-navy-900\/60,
+  .bg-navy-900\/70,
+  .bg-navy-950\/70,
+  .bg-navy-950\/85,
+  .bg-navy-950\/90,
+  [class*="bg-gradient-to-r"] {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+
+  .text-white,
+  .text-slate-200,
+  .text-slate-300 {
+    color: #0f172a !important;
+  }
+
+  .text-slate-400,
+  .text-slate-500 {
+    color: #475569 !important;
+  }
+
+  .text-sky-400,
+  .text-sky-300,
+  .text-sky-200 {
+    color: #0369a1 !important;
+  }
+
+  .text-amber-400,
+  .text-amber-300,
+  .text-amber-200 {
+    color: #b45309 !important;
+  }
+}
