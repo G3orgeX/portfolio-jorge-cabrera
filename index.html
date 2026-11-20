@@ -299,14 +299,14 @@
           <span class="font-mono text-xs text-sky-700 dark:text-sky-300 group-open:rotate-180 transition-transform">&#9662;</span>
         </summary>
 
-        <div class="px-5 pb-5 pt-2 border-t border-slate-200 dark:border-sky-900/50 grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs sm:text-sm">
-          <!-- Work Experience Compact -->
-          <div class="lg:col-span-7 space-y-2.5">
-            <div class="flex items-center justify-between">
-              <span class="font-bold text-slate-900 dark:text-white" data-i18n="exp.role">Desarrollador .NET &amp; SQL Server — Guma S.A.</span>
+        <div class="px-5 pb-5 pt-3 border-t border-slate-200 dark:border-sky-900/50 space-y-5 text-xs sm:text-sm">
+          <!-- 1. Work Experience Stacked Full Width -->
+          <div class="space-y-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-bold text-slate-900 dark:text-white text-sm sm:text-base" data-i18n="exp.role">Desarrollador .NET &amp; SQL Server — Guma S.A.</span>
               <span class="font-mono text-xs text-sky-700 dark:text-sky-300 font-semibold" data-i18n="exp.period">07/2022 – Actualidad</span>
             </div>
-            <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
+            <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
               <li class="flex items-start gap-2"><span class="text-sky-600 dark:text-sky-400 font-mono font-bold">&rarr;</span><span data-i18n="exp.b1"><strong>Modernización Legacy:</strong> Migración de sistemas VB6 a C#, VB.NET y ASP.NET Core 8.</span></li>
               <li class="flex items-start gap-2"><span class="text-sky-600 dark:text-sky-400 font-mono font-bold">&rarr;</span><span data-i18n="exp.b2"><strong>Core de Negocio:</strong> Sistemas integrales para producción, ventas, compras, RRHH y finanzas.</span></li>
               <li class="flex items-start gap-2"><span class="text-sky-600 dark:text-sky-400 font-mono font-bold">&rarr;</span><span data-i18n="exp.b3"><strong>APIs REST (Swagger):</strong> Integración con ERP Consuman para validación de órdenes y facturas.</span></li>
@@ -314,19 +314,27 @@
             </ul>
           </div>
 
-          <!-- Education & Certs Compact -->
-          <div class="lg:col-span-5 space-y-3 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-sky-900/50 pt-3 lg:pt-0 lg:pl-5">
-            <div>
-              <div class="font-mono text-[11px] text-sky-700 dark:text-sky-300 uppercase font-bold mb-1" data-i18n="edu.academicHeader">Estudios</div>
-              <div class="text-xs text-slate-900 dark:text-white font-semibold"><span data-i18n="edu.deg1.title">Analista de Sistemas</span> <span class="text-sky-700 dark:text-sky-300 font-mono">(2024–Act.)</span> &mdash; ISSD</div>
-              <div class="text-xs text-slate-700 dark:text-slate-300 mt-0.5"><span data-i18n="edu.deg2.title">Ing. en Sistemas de Información</span> <span class="text-slate-500 dark:text-slate-400 font-mono">(2017)</span> &mdash; UTN Córdoba</div>
+          <!-- 2. Academic Studies Stacked Below -->
+          <div class="border-t border-slate-200 dark:border-sky-900/50 pt-4 space-y-2">
+            <div class="font-mono text-xs text-sky-700 dark:text-sky-300 uppercase font-bold" data-i18n="edu.academicHeader">Estudios</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <div class="text-slate-900 dark:text-white font-semibold">
+                <span data-i18n="edu.deg1.title">Analista de Sistemas</span> <span class="text-sky-700 dark:text-sky-300 font-mono">(2024–Act.)</span> &mdash; Instituto Santo Domingo (ISSD)
+              </div>
+              <div class="text-slate-700 dark:text-slate-300">
+                <span data-i18n="edu.deg2.title">Ing. en Sistemas de Información</span> <span class="text-slate-500 dark:text-slate-400 font-mono">(2017)</span> &mdash; Universidad Tecnológica Nacional (UTN Córdoba)
+              </div>
             </div>
-            <div>
-              <div class="font-mono text-[11px] text-sky-700 dark:text-sky-300 uppercase font-bold mb-1" data-i18n="edu.certsHeader">Certificaciones</div>
-              <div class="text-xs text-slate-700 dark:text-slate-300">&bull; Bootcamp Ciencia de Datos con Azure <span class="text-slate-500 dark:text-slate-400">(Código Facilito, 11/2024)</span></div>
-              <div class="text-xs text-slate-700 dark:text-slate-300">&bull; Examen DP-900 Azure Data Fundamentals <span class="text-slate-500 dark:text-slate-400">(Código Facilito, 10/2024)</span></div>
-              <div class="text-xs text-slate-700 dark:text-slate-300">&bull; Desarrollo Web Full Stack JS/MERN <span class="text-slate-500 dark:text-slate-400">(Hola Mundo, 12/2023)</span></div>
-            </div>
+          </div>
+
+          <!-- 3. Certifications Stacked Below -->
+          <div class="border-t border-slate-200 dark:border-sky-900/50 pt-4 space-y-2">
+            <div class="font-mono text-xs text-sky-700 dark:text-sky-300 uppercase font-bold" data-i18n="edu.certsHeader">Certificaciones</div>
+            <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <li>&bull; <strong>Bootcamp Ciencia de Datos con Azure</strong> <span class="text-slate-500 dark:text-slate-400">(Código Facilito, 10/2024 – 11/2024)</span></li>
+              <li>&bull; <strong>Examen DP-900 Azure Data Fundamentals</strong> <span class="text-slate-500 dark:text-slate-400">(Código Facilito, 10/2024)</span></li>
+              <li>&bull; <strong>Desarrollo Web Full Stack JS/MERN</strong> <span class="text-slate-500 dark:text-slate-400">(Hola Mundo Academy, 06/2023 – 12/2023)</span></li>
+            </ul>
           </div>
         </div>
       </details>
