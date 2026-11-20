@@ -285,8 +285,8 @@ let currentFilter = "all";
 let allExpanded = false;
 
 const badgeStyles = {
-  sky: "bg-sky-100 border-sky-300 text-sky-900 font-semibold",
-  amber: "bg-amber-100 border-amber-300 text-amber-900 font-semibold"
+  sky: "bg-sky-100 dark:bg-sky-100 border-sky-300 text-sky-900 font-semibold",
+  amber: "bg-amber-100 dark:bg-amber-100 border-amber-300 text-amber-900 font-semibold"
 };
 
 function getTechIconHtml(tech) {
@@ -331,19 +331,19 @@ function renderProjects() {
     const openAttr = allExpanded ? "open" : "";
 
     return `
-      <details id="${project.id}" class="project-card group bg-slate-200/95 hover:bg-slate-100 border border-slate-300/90 hover:border-sky-500 rounded-xl overflow-hidden transition-all shadow-xl shadow-black/30 text-slate-900" ${openAttr}>
+      <details id="${project.id}" class="project-card group bg-white dark:bg-slate-200/95 hover:bg-sky-50/40 dark:hover:bg-slate-100 border border-slate-300 dark:border-slate-300/90 hover:border-sky-500 rounded-xl overflow-hidden transition-all shadow-md dark:shadow-xl dark:shadow-black/30 text-slate-900" ${openAttr}>
         <summary class="cursor-pointer list-none p-5 space-y-3 select-none">
           <!-- Top Bar: Code + Badge + Expand Chevron -->
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-2">
-              <span class="font-mono text-[11px] font-bold text-slate-800 bg-white px-2 py-0.5 rounded border border-slate-300 shadow-sm">
+              <span class="font-mono text-[11px] font-bold text-slate-800 bg-slate-100 dark:bg-white px-2 py-0.5 rounded border border-slate-300 shadow-sm">
                 ${project.code}
               </span>
               <span class="font-mono text-[11px] px-2 py-0.5 rounded border ${badgeClass}">
                 ${content.typeBadge}
               </span>
             </div>
-            <span class="font-mono text-[11px] font-semibold text-sky-800 flex items-center gap-1 group-open:text-slate-950">
+            <span class="font-mono text-[11px] font-semibold text-sky-700 dark:text-sky-800 flex items-center gap-1 group-open:text-slate-950">
               <span class="hidden sm:inline">${labels["card.toggle"]}</span>
               <span class="inline-block transition-transform group-open:rotate-180">&#9662;</span>
             </span>
@@ -351,7 +351,7 @@ function renderProjects() {
 
           <!-- Title & Compact 1-Line Hook -->
           <div>
-            <h3 class="text-base sm:text-lg font-extrabold text-slate-950 group-hover:text-sky-900 transition-colors">
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-950 group-hover:text-sky-800 dark:group-hover:text-sky-900 transition-colors">
               ${content.title}
             </h3>
             <p class="text-xs sm:text-sm text-slate-700 mt-1 leading-snug font-medium">
@@ -362,7 +362,7 @@ function renderProjects() {
           <!-- Compact Stack Pills with Tech Icons -->
           <div class="flex flex-wrap gap-1.5 pt-1">
             ${project.stack.map(tech => `
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-slate-300/90 text-slate-800 font-mono text-[11px] font-medium shadow-sm">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-50 dark:bg-white border border-slate-300/90 text-slate-800 font-mono text-[11px] font-medium shadow-sm">
                 ${getTechIconHtml(tech)}
                 <span>${tech}</span>
               </span>
@@ -371,7 +371,7 @@ function renderProjects() {
         </summary>
 
         <!-- Expandable Full Technical Details (Hidden by default) -->
-        <div class="px-5 pb-5 pt-3 border-t border-slate-300 bg-slate-100/90 space-y-3 text-xs leading-relaxed">
+        <div class="px-5 pb-5 pt-3 border-t border-slate-200 dark:border-slate-300 bg-slate-50 dark:bg-slate-100/90 space-y-3 text-xs leading-relaxed">
           <div>
             <span class="font-mono text-[11px] text-amber-800 font-bold block">${labels["card.problem"]}</span>
             <p class="text-slate-700 mt-0.5">${content.problem}</p>
@@ -414,7 +414,40 @@ function applyTranslations() {
   renderProjects();
 }
 
+function updateThemeUI(isDark) {
+  const sunIcon = document.getElementById("theme-icon-sun");
+  const moonIcon = document.getElementById("theme-icon-moon");
+  const themeLabel = document.getElementById("theme-label");
+
+  if (isDark) {
+    document.documentElement.classList.add("dark");
+    if (sunIcon) sunIcon.classList.remove("hidden");
+    if (moonIcon) moonIcon.classList.add("hidden");
+    if (themeLabel) themeLabel.textContent = "Light";
+  } else {
+    document.documentElement.classList.remove("dark");
+    if (sunIcon) sunIcon.classList.add("hidden");
+    if (moonIcon) moonIcon.classList.remove("hidden");
+    if (themeLabel) themeLabel.textContent = "Dark";
+  }
+}
+
 function setupEventListeners() {
+  // Initialize Theme from localStorage (defaults to dark)
+  const savedTheme = localStorage.getItem("jc_portfolio_theme");
+  const initialDark = savedTheme ? savedTheme === "dark" : true;
+  updateThemeUI(initialDark);
+
+  const themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const isCurrentlyDark = document.documentElement.classList.contains("dark");
+      const nextDark = !isCurrentlyDark;
+      localStorage.setItem("jc_portfolio_theme", nextDark ? "dark" : "light");
+      updateThemeUI(nextDark);
+    });
+  }
+
   const langBtn = document.getElementById("lang-toggle");
   if (langBtn) {
     langBtn.addEventListener("click", () => {
@@ -441,12 +474,44 @@ function setupEventListeners() {
       currentFilter = btn.getAttribute("data-filter") || "all";
 
       filterButtons.forEach(b => {
-        b.classList.remove("active", "border-sky-400/60", "bg-sky-400/15", "text-sky-200");
-        b.classList.add("border-sky-900", "bg-navy-900", "text-slate-300");
+        b.classList.remove(
+          "active",
+          "border-sky-600",
+          "dark:border-sky-400/60",
+          "bg-sky-600/10",
+          "dark:bg-sky-400/15",
+          "text-sky-900",
+          "dark:text-sky-200",
+          "font-semibold"
+        );
+        b.classList.add(
+          "border-slate-300",
+          "dark:border-sky-900",
+          "bg-white",
+          "dark:bg-navy-900",
+          "text-slate-600",
+          "dark:text-slate-300"
+        );
       });
 
-      btn.classList.remove("border-sky-900", "bg-navy-900", "text-slate-300");
-      btn.classList.add("active", "border-sky-400/60", "bg-sky-400/15", "text-sky-200");
+      btn.classList.remove(
+        "border-slate-300",
+        "dark:border-sky-900",
+        "bg-white",
+        "dark:bg-navy-900",
+        "text-slate-600",
+        "dark:text-slate-300"
+      );
+      btn.classList.add(
+        "active",
+        "border-sky-600",
+        "dark:border-sky-400/60",
+        "bg-sky-600/10",
+        "dark:bg-sky-400/15",
+        "text-sky-900",
+        "dark:text-sky-200",
+        "font-semibold"
+      );
 
       renderProjects();
     });
