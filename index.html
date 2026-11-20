@@ -63,6 +63,7 @@
         <a href="#overview" class="hover:text-sky-700 dark:hover:text-sky-300 transition-colors" data-i18n="nav.overview">Perfil</a>
         <a href="#case-studies" class="hover:text-sky-700 dark:hover:text-sky-300 transition-colors" data-i18n="nav.cases">Proyectos (7)</a>
         <a href="#more-sections" class="hover:text-sky-700 dark:hover:text-sky-300 transition-colors" data-i18n="nav.more">Trayectoria &amp; Arquitectura</a>
+        <a href="#contact" class="hover:text-sky-700 dark:hover:text-sky-300 transition-colors" data-i18n="nav.contact">Contacto</a>
       </nav>
 
       <div class="flex items-center gap-2">
@@ -113,48 +114,30 @@
           <circle cx="150" cy="20" r="3" fill="#38bdf8"/>
         </svg>
 
-        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <!-- Left: Photo + Core Identity -->
-          <div class="flex flex-col sm:flex-row sm:items-center gap-6">
-            <div id="hero-avatar-wrapper" class="relative shrink-0">
-              <div class="w-[108px] h-[108px] sm:w-[130px] sm:h-[130px] rounded-full p-0.5 bg-gradient-to-tr from-sky-600 to-sky-400 dark:from-sky-400 dark:to-sky-200 shadow-xl shadow-sky-500/15">
-                <img src="assets/profile.jpg" alt="Jorge David Cabrera" class="w-full h-full object-cover object-top rounded-full border-2 border-white dark:border-navy-950" />
-              </div>
-              <span class="absolute bottom-1.5 right-1.5 w-4 h-4 rounded-full bg-emerald-500 dark:bg-emerald-400 border-2 border-white dark:border-navy-950"></span>
+        <div class="relative z-10 flex flex-col sm:flex-row sm:items-center gap-6">
+          <!-- Photo + Core Identity -->
+          <div id="hero-avatar-wrapper" class="relative shrink-0">
+            <div class="w-[108px] h-[108px] sm:w-[130px] sm:h-[130px] rounded-full p-0.5 bg-gradient-to-tr from-sky-600 to-sky-400 dark:from-sky-400 dark:to-sky-200 shadow-xl shadow-sky-500/15">
+              <img src="assets/profile.jpg" alt="Jorge David Cabrera" class="w-full h-full object-cover object-top rounded-full border-2 border-white dark:border-navy-950" />
             </div>
-
-            <div class="space-y-1">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-400/10 border border-sky-300 dark:border-sky-400/30 text-sky-900 dark:text-sky-200 text-[11px] font-mono font-semibold" data-i18n="hero.role">
-                  DESARROLLADOR BACK-END (+4 AÑOS EXP.)
-                </span>
-                <span class="text-xs font-mono text-slate-600 dark:text-slate-400">Jesús María, Córdoba &bull; 3525-504830</span>
-              </div>
-              <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-950 dark:text-white">
-                Jorge David Cabrera
-              </h1>
-              <p class="text-sm sm:text-base font-extrabold text-sky-700 dark:text-sky-300 font-mono">
-                BACKEND &amp; DATA ENGINEERING &bull; .NET &bull; C# &bull; SQL SERVER &bull; POWER BI
-              </p>
-              <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 max-w-2xl" data-i18n="hero.tagline">
-                Arquitectura de datos, modernización de sistemas legacy (VB6 a .NET Framework / .NET 8) e integración de APIs REST.
-              </p>
-            </div>
+            <span class="absolute bottom-1.5 right-1.5 w-4 h-4 rounded-full bg-emerald-500 dark:bg-emerald-400 border-2 border-white dark:border-navy-950"></span>
           </div>
 
-          <!-- Right: Quick Actions -->
-          <div class="flex flex-wrap lg:flex-col items-start lg:items-end gap-2 shrink-0">
-            <a href="mailto:jorgedavidcabrerautn@gmail.com" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-sky-600 dark:bg-sky-400 hover:bg-sky-500 dark:hover:bg-sky-300 text-white dark:text-navy-950 font-bold text-xs transition-all shadow-sm">
-              <span>jorgedavidcabrerautn@gmail.com</span>
-            </a>
-            <div class="flex items-center gap-2">
-              <a href="https://www.linkedin.com/in/jorge-david-cabrera-415276202/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white dark:bg-navy-950/90 hover:bg-slate-100 dark:hover:bg-navy-800 border border-slate-300 dark:border-sky-500/40 text-sky-800 dark:text-sky-200 text-xs font-mono font-medium transition-all">
-                LinkedIn &nearr;
-              </a>
-              <a href="https://github.com/G3orgeX" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white dark:bg-navy-950/90 hover:bg-slate-100 dark:hover:bg-navy-800 border border-slate-300 dark:border-sky-500/40 text-slate-800 dark:text-slate-200 text-xs font-mono font-medium transition-all">
-                GitHub (G3orgeX) &nearr;
-              </a>
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-400/10 border border-sky-300 dark:border-sky-400/30 text-sky-900 dark:text-sky-200 text-[11px] font-mono font-semibold" data-i18n="hero.role">
+                DESARROLLADOR BACK-END (+4 AÑOS EXP.)
+              </span>
             </div>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight text-slate-950 dark:text-white">
+              Jorge David Cabrera
+            </h1>
+            <p class="text-sm sm:text-lg font-extrabold text-sky-700 dark:text-sky-300 font-mono">
+              BACKEND &amp; DATA ENGINEERING &bull; .NET &bull; C# &bull; SQL SERVER &bull; POWER BI
+            </p>
+            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 max-w-3xl" data-i18n="hero.tagline">
+              Arquitectura de datos, modernización de sistemas legacy (VB6 a .NET Framework / .NET 8) e integración de APIs REST.
+            </p>
           </div>
         </div>
 
@@ -425,18 +408,49 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-300 dark:border-sky-900/60 bg-white dark:bg-navy-950 py-6 mt-10 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600 dark:text-slate-400 font-mono">
-      <div>
-        <span class="text-slate-900 dark:text-white font-semibold">Jorge David Cabrera</span> &mdash; Backend &amp; Data Engineering (.NET &bull; C# &bull; SQL Server &bull; Power BI)
+  <!-- CONTACT FOOTER -->
+  <footer id="contact" class="relative z-10 border-t border-slate-300 dark:border-sky-900/60 bg-white dark:bg-navy-950/95 py-10 mt-12 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <!-- Left: Title & Location -->
+        <div class="space-y-1.5">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-sky-700 dark:text-sky-300 font-bold" data-i18n="footer.eyebrow">Contacto Directo</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-950 dark:text-white">Jorge David Cabrera</h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-mono flex flex-wrap items-center gap-x-4 gap-y-1">
+            <span>Jesús María, Córdoba (Argentina)</span>
+            <span>&bull;</span>
+            <span>Tel / WhatsApp: <strong class="text-slate-900 dark:text-slate-200">+54 9 3525-504830</strong></span>
+          </p>
+        </div>
+
+        <!-- Right: Contact Buttons (Email, LinkedIn, GitHub) -->
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="mailto:jorgedavidcabrerautn@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-sky-600 dark:bg-sky-400 hover:bg-sky-500 dark:hover:bg-sky-300 text-white dark:text-navy-950 font-bold text-xs sm:text-sm transition-all shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>jorgedavidcabrerautn@gmail.com</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/jorge-david-cabrera-415276202/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-100 dark:bg-navy-900 hover:bg-slate-200 dark:hover:bg-navy-800 border border-slate-300 dark:border-sky-500/40 text-sky-800 dark:text-sky-200 text-xs sm:text-sm font-mono font-medium transition-all">
+            <svg class="w-4 h-4 text-sky-600 dark:text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="https://github.com/G3orgeX" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-100 dark:bg-navy-900 hover:bg-slate-200 dark:hover:bg-navy-800 border border-slate-300 dark:border-sky-500/40 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-mono font-medium transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub (G3orgeX)</span>
+          </a>
+        </div>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="mailto:jorgedavidcabrerautn@gmail.com" class="hover:text-sky-700 dark:hover:text-sky-300">Email</a>
-        <span>&bull;</span>
-        <a href="https://www.linkedin.com/in/jorge-david-cabrera-415276202/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 dark:hover:text-sky-300">LinkedIn</a>
-        <span>&bull;</span>
-        <a href="https://github.com/G3orgeX" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 dark:hover:text-sky-300">GitHub</a>
+
+      <div class="pt-4 border-t border-slate-200 dark:border-sky-900/40 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+        <span>BACKEND &amp; DATA ENGINEERING &mdash; .NET &bull; C# &bull; SQL SERVER &bull; POWER BI</span>
+        <span>linkedin.com/in/jorge-david-cabrera-415276202</span>
       </div>
     </div>
   </footer>
