@@ -560,6 +560,67 @@ function setupEventListeners() {
     );
     observer.observe(heroAvatar);
   }
+
+  // Floating Contact Button (FAB) + Popover Panel + Auto-hide when reaching Footer
+  const fabWidget = document.getElementById("floating-contact-widget");
+  const fabBtn = document.getElementById("floating-contact-btn");
+  const fabPanel = document.getElementById("floating-contact-panel");
+  const fabClose = document.getElementById("floating-contact-close");
+  const fabIconOpen = document.getElementById("fab-icon-open");
+  const fabIconClose = document.getElementById("fab-icon-close");
+  const footerSection = document.getElementById("contact");
+
+  let isFabOpen = false;
+
+  function setFabPanelState(open) {
+    isFabOpen = open;
+    if (!fabPanel || !fabIconOpen || !fabIconClose) return;
+    if (open) {
+      fabPanel.classList.remove("opacity-0", "scale-90", "pointer-events-none");
+      fabPanel.classList.add("opacity-100", "scale-100");
+      fabIconOpen.classList.add("hidden");
+      fabIconClose.classList.remove("hidden");
+    } else {
+      fabPanel.classList.add("opacity-0", "scale-90", "pointer-events-none");
+      fabPanel.classList.remove("opacity-100", "scale-100");
+      fabIconOpen.classList.remove("hidden");
+      fabIconClose.classList.add("hidden");
+    }
+  }
+
+  if (fabBtn) {
+    fabBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setFabPanelState(!isFabOpen);
+    });
+  }
+
+  if (fabClose) {
+    fabClose.addEventListener("click", () => {
+      setFabPanelState(false);
+    });
+  }
+
+  document.addEventListener("click", (e) => {
+    if (isFabOpen && fabWidget && !fabWidget.contains(e.target)) {
+      setFabPanelState(false);
+    }
+  });
+
+  if (footerSection && fabWidget && "IntersectionObserver" in window) {
+    const footerObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setFabPanelState(false);
+          fabWidget.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+        } else {
+          fabWidget.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+        }
+      },
+      { threshold: 0.1 }
+    );
+    footerObserver.observe(footerSection);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
